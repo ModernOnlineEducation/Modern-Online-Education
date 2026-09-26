@@ -1,0 +1,219 @@
+:root {
+  --bg: #050816;
+  --bg-alt: #0b1020;
+  --accent: #4f46e5;
+  --accent-soft: #6366f1;
+  --text: #f9fafb;
+  --muted: #9ca3af;
+  --card-bg: #111827;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+  color: var(--text);
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(16px);
+  background: rgba(2, 6, 23, 0.7);
+  z-index: 10;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.nav nav a {
+  margin-left: 1.5rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav nav a:hover {
+  color: var(--text);
+}
+
+.btn-nav {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent-soft);
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  padding: 0 8%;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 640px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  color: white;
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(79, 70, 229, 0.6);
+}
+
+.btn-secondary {
+  border: 1px solid var(--accent-soft);
+  color: var(--text);
+}
+
+/* Sections */
+.section {
+  padding: 5rem 8%;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  color: var(--muted);
+  max-width: 720px;
+}
+
+.section-grid .cards {
+  margin-top: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+}
+
+.pricing-card .price {
+  margin-top: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-soft);
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.testimonial-name {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Contact */
+.contact-options {
+  margin-top: 1.5rem;
+}
+
+.contact-options p {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  padding: 2rem 8%;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Animations */
+.animate-fade {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.9s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.animate-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.animate-up.visible {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 5rem;
+  }
+
+  .nav nav a {
+    margin-left: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}
